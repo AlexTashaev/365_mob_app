@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "365 Молитв",
+    "slug": "365-prayers",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A237E"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bneibaruch.prayers365"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1A237E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.bneibaruch.prayers365",
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
