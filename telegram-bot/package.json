@@ -1,0 +1,13 @@
+{
+  "name": "365-prayers-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram бот «365 Молитв» — ежедневные каббалистические молитвы по еврейскому календарю",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "node --watch src/bot.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.16.3"
+  }
+}
