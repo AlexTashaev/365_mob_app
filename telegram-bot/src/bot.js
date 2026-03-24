@@ -88,9 +88,9 @@ function entryNavKeyboard(entry, userId) {
 // --- /start ---
 
 bot.start((ctx) => {
-  const name = ctx.from.first_name || 'друг';
+  const name = escMd(ctx.from.first_name || 'друг');
   ctx.reply(
-    `Шалом, ${name}! 🙏\n\nДобро пожаловать в бот *365 Молитв*\\.\n` +
+    `Шалом, ${name}\\! 🙏\n\nДобро пожаловать в бот *365 Молитв*\\.\n` +
       `Ежедневные духовные молитвы и размышления по еврейскому календарю\\.\n\n` +
       `📚 Всего записей: *${getTotalEntries()}*\n\n` +
       `Выберите действие:`,
@@ -112,13 +112,13 @@ bot.start((ctx) => {
 
 bot.help((ctx) => {
   ctx.reply(
-    `📖 *365 Молитв — Помощь*\n\n` +
+    `📖 *365 Молитв \\— Помощь*\n\n` +
       `Команды:\n` +
-      `/start — Главное меню\n` +
-      `/months — Календарь месяцев\n` +
-      `/random — Случайная молитва\n` +
-      `/bookmarks — Мои закладки\n` +
-      `/help — Эта справка`,
+      `/start \\— Главное меню\n` +
+      `/months \\— Календарь месяцев\n` +
+      `/random \\— Случайная молитва\n` +
+      `/bookmarks \\— Мои закладки\n` +
+      `/help \\— Эта справка`,
     { parse_mode: 'MarkdownV2' }
   );
 });
