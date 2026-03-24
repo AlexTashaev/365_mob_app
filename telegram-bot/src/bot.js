@@ -8,6 +8,8 @@ const {
 } = require('./data');
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
+const WEBAPP_URL = process.env.WEBAPP_URL; // URL where the Mini App is hosted
+
 if (!BOT_TOKEN) {
   console.error('❌ Укажите BOT_TOKEN в переменных окружения');
   process.exit(1);
@@ -95,6 +97,9 @@ bot.start((ctx) => {
     {
       parse_mode: 'MarkdownV2',
       ...Markup.inlineKeyboard([
+        ...(WEBAPP_URL
+          ? [[Markup.button.webApp('📱 Открыть приложение', WEBAPP_URL)]]
+          : []),
         [Markup.button.callback('📅 Календарь месяцев', 'months')],
         [Markup.button.callback('🔀 Случайная молитва', 'random')],
         [Markup.button.callback('🔖 Мои закладки', 'bookmarks')],
@@ -292,6 +297,9 @@ bot.action('main_menu', (ctx) => {
   ctx.answerCbQuery();
   ctx.reply('Выберите действие:', {
     ...Markup.inlineKeyboard([
+      ...(WEBAPP_URL
+        ? [[Markup.button.webApp('📱 Открыть приложение', WEBAPP_URL)]]
+        : []),
       [Markup.button.callback('📅 Календарь месяцев', 'months')],
       [Markup.button.callback('🔀 Случайная молитва', 'random')],
       [Markup.button.callback('🔖 Мои закладки', 'bookmarks')],
